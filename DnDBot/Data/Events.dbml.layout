@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="Events">
+  <DataContextMoniker Name="/EventsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="af1f37a4-3fb4-4edb-8a43-b96534269786" absoluteBounds="6.125, 1.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/EventsDataContext/Event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9170611b-8e01-448c-8744-a462e76e5417" absoluteBounds="6.14, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a90c402-4393-49b5-ae58-56f030cb9182" absoluteBounds="8.625, 3.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/EventsDataContext/HashTag" />
+      <nestedChildShapes>
+        <elementListCompartment Id="caf0600f-f762-4966-9155-af91e29048f1" absoluteBounds="8.64, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a379622-2952-4b57-ba74-2af61255ec7e" absoluteBounds="9, 0.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/EventsDataContext/EventHashtag" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90f47afc-9420-43bc-8db5-22fa8e088d76" absoluteBounds="9.015, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 1.81814697265625); (9 : 1.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EventsDataContext/Event/Event_EventHashtag" />
+      <nodes>
+        <classShapeMoniker Id="af1f37a4-3fb4-4edb-8a43-b96534269786" />
+        <classShapeMoniker Id="6a379622-2952-4b57-ba74-2af61255ec7e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.8125 : 3.25); (9.8125 : 2.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EventsDataContext/HashTag/HashTag_EventHashtag" />
+      <nodes>
+        <classShapeMoniker Id="1a90c402-4393-49b5-ae58-56f030cb9182" />
+        <classShapeMoniker Id="6a379622-2952-4b57-ba74-2af61255ec7e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

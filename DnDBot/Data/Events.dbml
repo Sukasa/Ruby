@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Datastore" Class="EventsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Datastore.mdf;Integrated Security=True" SettingsObjectName="DnDBot.Properties.Settings" SettingsPropertyName="DatastoreConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Events" Member="Events">
+    <Type Name="Event">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NoteData" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Event_EventHashtag" Member="EventHashtags" ThisKey="Id" OtherKey="EventId" Type="EventHashtag" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HashTags" Member="HashTags">
+    <Type Name="HashTag">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tag" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="HashTag_EventHashtag" Member="EventHashtags" ThisKey="Id" OtherKey="TagId" Type="EventHashtag" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EventHashtags" Member="EventHashtags">
+    <Type Name="EventHashtag">
+      <Column Name="TagId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="Event_EventHashtag" Member="Event" ThisKey="EventId" OtherKey="Id" Type="Event" IsForeignKey="true" />
+      <Association Name="HashTag_EventHashtag" Member="HashTag" ThisKey="TagId" OtherKey="Id" Type="HashTag" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

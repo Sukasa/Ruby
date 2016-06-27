@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Datastore" Class="NotesDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Datastore.mdf;Integrated Security=True" SettingsObjectName="DnDBot.Properties.Settings" SettingsPropertyName="DatastoreConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Notes" Member="Notes">
+    <Type Name="Note">
+      <Column Name="NoteKey" Type="System.String" DbType="NVarChar(80) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NoteData" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
