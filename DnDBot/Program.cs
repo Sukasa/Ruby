@@ -142,7 +142,8 @@ namespace DnDBot
                                 CommandLine = "";
                                 break;
                             case ConsoleKey.Backspace:
-                                CommandLine = CommandLine.Substring(0, CommandLine.Length - 1);
+                                if (CommandLine.Length > 0)
+                                    CommandLine = CommandLine.Substring(0, CommandLine.Length - 1);
                                 break;
                             default:
                                 CommandLine = CommandLine + Key.KeyChar;
