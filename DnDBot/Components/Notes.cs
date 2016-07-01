@@ -26,9 +26,9 @@ namespace DnDBot
                     NoteData = NoteData
                 };
                 NotesDB.Notes.InsertOnSubmit(NewNote);
-                SayInChannel(InfoSaved);
             }
             NotesDB.SubmitChanges();
+            SayInChannel(InfoSaved);
         }
 
         void Recall(string NoteKey)
