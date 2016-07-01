@@ -42,7 +42,7 @@
 
         static string[] BeforeLeave = new string[]
         {
-            "Bye!", "See you guys around.", "Take care, nerds.", "Peace!", "I'm gonna need a drink after this.", "Cya."
+            "Bye!", "See you guys around.", "Take care, nerds.", "Peace!", "I'm gonna need a drink after this.", "Cya.", "Don't get eaten by a grue!"
         };
 
         static string[] ListHashtags = new string[]
