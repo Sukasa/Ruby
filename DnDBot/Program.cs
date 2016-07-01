@@ -156,7 +156,7 @@ namespace DnDBot
             DrawCommandLine();
         }
 
-        static Regex DiceRegex = new Regex(@"!(?:(?:roll )?(\d+)d([^{]\S*|{[^}]+}))", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        static Regex DiceRegex = new Regex(@"!(?:(?:roll\s)?(\d+)d(\{[^}]+\}|\d+))\s*((?:(?:-|\+|/|\\|\*|top|bottom)\s*-?\d+\s*)+)?", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         static Regex RecallRegex = new Regex(@"!recall\s+(\S+)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         static Regex NoteRegex = new Regex(@"!note\s+(\S+)\s+(.+)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         static Regex LogRegex = new Regex(@"!log\s+((?:([^#]|\w+)\s*)+)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
@@ -178,7 +178,7 @@ namespace DnDBot
             else if (DiceRegex.IsMatch(Text))
             {
                 Match T = DiceRegex.Match(Text);
-                DiceRoll(T.Groups[1].Value, T.Groups[2].Value);
+                DiceRoll(T.Groups[1].Value, T.Groups[2].Value, T.Groups[3].Value);
             }
             else if (RecallRegex.IsMatch(Text))
             {
