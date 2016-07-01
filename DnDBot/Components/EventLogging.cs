@@ -37,6 +37,7 @@ namespace DnDBot
                 EventsDB.EventHashtags.InsertOnSubmit(new Data.EventHashtag() { EventId = LogEvent.Id, TagId = HashTag(Hash) });
 
             EventsDB.SubmitChanges();
+            SayInChannel(InfoSaved);
         }
 
         int HashTag(string HashTag)
@@ -103,6 +104,14 @@ namespace DnDBot
         const int Width = 120;
         void SendHashTags(string Requester)
         {
+            if (EventsDB.HashTags.Count() == 0)
+            {
+                MessagePlayer(Requester, ListHashtags);
+                MessagePlayer(Requester, new string('-', 120));
+                MessagePlayer(Requester, SearchFail);
+
+                return;
+            }
             int MaxLen = (from H in EventsDB.HashTags select H.Tag.Length).Max() + 3;
             int Num = Width / MaxLen;
 
