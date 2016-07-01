@@ -14,6 +14,9 @@
                 case "say":
                     SayInChannel(CommandLine.Substring(Command.Length + 1));
                     break;
+                case "do":
+                    SayInChannel("\x0001ACTION " + CommandLine.Substring(Command.Length + 1));
+                    break;
             }
         }
 
